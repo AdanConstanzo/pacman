@@ -89,17 +89,17 @@ class DummyAgent(CaptureAgent):
 		bestActions = [a for a, v in zip(actions, values) if v == maxValue]
 
 		foodLeft = len(self.getFood(gameState).asList())
-
-		if foodLeft <= 2:
-			bestDist = 9999
-			for action in actions:
-				successor = self.getSuccessor(gameState, action)
-				pos2 = successor.getAgentPosition(self.index)
-				dist = self.getMazeDistance(self.start,pos2)
-				if dist < bestDist:
-					bestAction = action
-					bestDist = dist
-			return bestAction
+    # when collected enough food.
+		# if foodLeft <= 2:
+		# 	bestDist = 9999
+		# 	for action in actions:
+		# 		successor = self.getSuccessor(gameState, action)
+		# 		pos2 = successor.getAgentPosition(self.index)
+		# 		dist = self.getMazeDistance(self.start,pos2)
+		# 		if dist < bestDist:
+		# 			bestAction = action
+		# 			bestDist = dist
+		# 	return bestAction
 
 		return random.choice(bestActions)
 
