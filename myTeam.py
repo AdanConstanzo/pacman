@@ -142,7 +142,7 @@ class DummyAgent(CaptureAgent):
 		dist = self.getMazeDistance(self.start, pos2)
 
 		currentState = gameState.getAgentState(self.index)
-		features['foodOnBoard'] = nextState.numCarrying - currentState.numCarrying#len(foodList)#self.getScore(successor)
+		features['foodOnBoard'] = nextState.numCarrying - currentState.numCarrying
 		features['distanceFromBaseIfPacmanAndCarrying'] = dist if (nextState.numCarrying > 0) else 0
 		features['scoreIncrease'] = nextState.numReturned - currentState.numReturned
 		return features
