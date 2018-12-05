@@ -100,9 +100,9 @@ class DummyAgent(CaptureAgent):
     # features['foodHolding'] = 1
     # features['distanceFromPacman'] = 1
     # features['distanceFromSafety'] = 1
+    myPos = successor.getAgentState(self.index).getPosition()
 
     if len(foodList) > 0: # This should always be True,  but better safe than sorry
-      myPos = successor.getAgentState(self.index).getPosition()
       minDistance = min([self.getMazeDistance(myPos, food) for food in foodList])
       features['distanceToFood'] = 1/minDistance
 
